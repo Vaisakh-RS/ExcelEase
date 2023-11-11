@@ -68,11 +68,12 @@ const ViewDataCard = () => {
                 </button>
             </div>
             <button
+                className=" ml-32 mt-12 border border-gray-500 hover:border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out"
                 onClick={() => {
                     setNewCardPage(true);
                 }}
             >
-                Add New Card
+                Add New Data
             </button>
 
             {newCardPage && (
