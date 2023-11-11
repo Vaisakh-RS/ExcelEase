@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import '../styles/Button.css';
 
 
@@ -10,7 +10,7 @@ export const Button = ({children, type, onClick, buttonStyle, buttonSize}) => {
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
     
     return (
-        <a href='/DepartmentForm' className='btn-mobile'>
+        <a href='/upload' className='btn-mobile'>
             <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
                 {children} Get Started
             </button>

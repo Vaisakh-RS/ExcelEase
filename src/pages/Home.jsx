@@ -1,11 +1,10 @@
-import React from "react";
 import logo from './assets/logo.svg'
 import { Button } from './Button';
 import '../styles/Home.css';
 import { useTypewriter } from "react-simple-typewriter";
 
 function Home() {
-  const [text, count] = useTypewriter({
+  const [text, ] = useTypewriter({
     words: [
       "Ease",
       "Simple",
