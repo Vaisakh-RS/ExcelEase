@@ -1,9 +1,9 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /* eslint-disable react/prop-types */
-const NewCard = ({ data , onClose , updateCsvData}) => {
+const NewCard = ({ data, onClose, updateCsvData }) => {
     const initialFormState = Object.fromEntries(
-        Object.keys(data).map((key) => [key, ''])
+        Object.keys(data).map((key) => [key, '']),
     );
 
     const [formData, setFormData] = useState(initialFormState);
@@ -24,7 +24,6 @@ const NewCard = ({ data , onClose , updateCsvData}) => {
         // Close the modal or perform any other actions
         onClose();
     };
-
 
     return (
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -48,7 +47,8 @@ const NewCard = ({ data , onClose , updateCsvData}) => {
                                 type="text"
                                 value={formData[key]}
                                 onChange={(e) =>
-                                    handleInputChange(key, e.target.value)}
+                                    handleInputChange(key, e.target.value)
+                                }
                                 className="w-1/4 p-2 border border-gray-300 rounded"
                             />
                         </div>
