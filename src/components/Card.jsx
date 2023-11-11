@@ -60,7 +60,8 @@ const Card = ({ data }) => {
                                     readOnly={!edit}
                                 />
                             </div>
-                        </div>)
+                        </div>
+                    );
                 })}
                 <button onClick={edit ? updateData : changeToEdit}>
                     {edit ? 'Update' : 'Edit'}

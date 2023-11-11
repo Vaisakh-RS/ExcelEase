@@ -24,7 +24,7 @@ const ViewDataCard = () => {
         }
     };
 
-    const hasNext = Number(params.id) > 1;
+    // const hasNext = Number(params.id) > 1;
 
     const handlePrev = () => {
         const id = Number(params.id);
@@ -33,7 +33,7 @@ const ViewDataCard = () => {
         }
     };
 
-    const hasPrevious = Number(params.id);
+    // const hasPrevious = Number(params.id);
 
     return (
         <>
@@ -42,7 +42,7 @@ const ViewDataCard = () => {
                 <button
                     onClick={handlePrev}
                     className="absolute top-1/2 left-1 ml-32 border border-gray-500 hover:border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out"
-                    disabled={!hasPrevious}
+                    // disabled={!hasPrevious}
                 >
                     Previous
                 </button>
@@ -50,7 +50,7 @@ const ViewDataCard = () => {
                 <button
                     onClick={handleNext}
                     className="absolute top-1/2 right-1 mr-32 border border-gray-500 hover:border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out"
-                    disabled={!hasNext}
+                    // disabled={!hasNext}
                 >
                     Next
                 </button>
