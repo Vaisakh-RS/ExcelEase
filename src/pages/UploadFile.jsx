@@ -11,7 +11,7 @@ const UploadFile = () => {
 
     return (
         <div>
-            <h1>CSV File Upload and Parsing</h1>
+            <h1 className='p-20 text-2xl'>Upload your CSV or XLSX file</h1>
             <CsvFileUpload onUpload={handleUpload} />
         </div>
     );

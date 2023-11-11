@@ -41,6 +41,7 @@ const CsvFileUpload = ({ onUpload }) => {
 
     return (
         <div
+            className='bg-red-50 text-xl font-extrabold w-1/2 m-auto'
             {...getRootProps()}
             style={{
                 padding: '20px',
@@ -50,7 +51,7 @@ const CsvFileUpload = ({ onUpload }) => {
             }}
         >
             <input {...getInputProps()} />
-            <p>Drag and drop a CSV file here, or click to select one</p>
+            <p>Drag and drop a file here, or click to select one</p>
         </div>
     );
 };
