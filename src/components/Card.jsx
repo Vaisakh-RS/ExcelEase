@@ -21,6 +21,7 @@ const Card = ({ data }) => {
                             <input
                                 type="text"
                                 value={value}
+                                onChange={()=>{}}
                                 className="w-1/4 p-2 border border-gray-300 rounded"
                             />
                         </div>
