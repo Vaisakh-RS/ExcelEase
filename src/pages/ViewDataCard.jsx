@@ -2,11 +2,19 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../components/Card';
+import NewCard from '../components/NewCard';
 
 const ViewDataCard = () => {
+    const [csvData, setCsvData] = useState(() => {
+        const storedData = localStorage.getItem('excel_data');
+        return storedData ? JSON.parse(storedData) : null;
+    });
+
     const params = useParams();
     const [row, setRow] = useState({});
     const navigate = useNavigate();
+
+    const [newCardPage,setNewCardPage] = useState(false);
 
     useEffect(() => {
         const nRow = JSON.parse(localStorage.getItem('excel_data'))[
@@ -33,6 +41,10 @@ const ViewDataCard = () => {
         }
     };
 
+    const handleUpdateCsvData = (newCsvData) => {
+        setCsvData(newCsvData); // Assuming setCsvData is the state updater
+    };
+
     // const hasPrevious = Number(params.id);
 
     return (
@@ -55,6 +67,10 @@ const ViewDataCard = () => {
                     Next
                 </button>
             </div>
+            <button onClick={()=>{setNewCardPage(true)}}>Add New Card</button>
+
+            {newCardPage && <NewCard data={csvData.length > 0 ? csvData[1] : {}} onClose={()=>{setNewCardPage(false)}}  updateCsvData={handleUpdateCsvData}/>}
+
         </>
     );
 };
