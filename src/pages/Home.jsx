@@ -13,7 +13,7 @@ function Home() {
     return (
         <>
             <div className=" text-white font-bold text-2xl px-8 sticky top-0 py-5 purple">
-                <h1 className='very-light-purple-text'>Excel Ease</h1>
+                <h1 className="very-light-purple-text">Excel Ease</h1>
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="home-container">
