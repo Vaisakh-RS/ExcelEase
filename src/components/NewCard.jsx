@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-/* eslint-disable react/prop-types */
 const NewCard = ({ data, onClose, updateCsvData }) => {
     const initialFormState = Object.fromEntries(
         Object.keys(data).map((key) => [key, '']),
@@ -18,26 +17,23 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
         const updatedCsvData = [...storedCsvData, formData];
         localStorage.setItem('csvData', JSON.stringify(updatedCsvData));
 
-        // Notify the parent component to update its state
         updateCsvData(updatedCsvData);
-
-        // Close the modal or perform any other actions
         onClose();
     };
 
     return (
-        <div className="bg-white p-4 rounded-lg shadow-md w-1/2">
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-lg shadow-md">
             <div>
                 <h5 className="text-2xl font-semibold mb-10">Card</h5>
 
                 {Object.entries(data).map(([key, value]) => (
                     <div key={key} className="mb-4 flex items-center">
-                        <div className="w-1/3">
+                        <div className="w-3/6">
                             <h2 className="text-lg font-semibold mb-1">
                                 {key}
                             </h2>
                         </div>
-                        <div className="w-2/3">
+                        <div className="w-3/6">
                             <input
                                 type="text"
                                 value={formData[key]}
@@ -51,8 +47,20 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
                     </div>
                 ))}
             </div>
-            <button onClick={handleAddCard}>Add Card</button>
-            <button onClick={onClose}>Close</button>
+            <div className="flex justify-between">
+                <button
+                    className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+                    onClick={handleAddCard}
+                >
+                    Add Card
+                </button>
+                <button
+                    className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-700"
+                    onClick={onClose}
+                >
+                    Close
+                </button>
+            </div>
         </div>
     );
 };
