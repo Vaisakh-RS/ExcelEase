@@ -1,3 +1,12 @@
+.purple{
+    background-color: #592E83;
+}
+.very-light-purple-text{
+    color: #CAA8F5;
+}
+
+
+
 .home-container {
     background: #ffffff;
     display: flex;
@@ -24,7 +33,7 @@
 }
 
 .home-container > div:hover {
-    transform: scale(1.12);
+    transform: scale(1.06);
 }
 
 .home-container > div {

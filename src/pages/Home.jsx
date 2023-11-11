@@ -12,8 +12,8 @@ function Home() {
 
     return (
         <>
-            <div className="bg-black text-white font-bold text-2xl px-8 sticky top-0 py-5">
-                <h1>Excel Ease</h1>
+            <div className=" text-white font-bold text-2xl px-8 sticky top-0 py-5 purple">
+                <h1 className='very-light-purple-text'>Excel Ease</h1>
             </div>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="home-container">
@@ -31,7 +31,7 @@ function Home() {
                         <Button
                             className="btns"
                             buttonStyle="btn--primary"
-                            buttonSize="btn--large"
+                            buttonSize="btn--medium"
                         />
                     </div>
                     <div className="mt-8 text-center sm:text-left">
