@@ -28,7 +28,6 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
     return (
         <div className="bg-white p-4 rounded-lg shadow-md w-1/2">
             <div>
-
                 <h5 className="text-2xl font-semibold mb-10">Card</h5>
 
                 {Object.entries(data).map(([key, value]) => (

@@ -14,7 +14,7 @@ const ViewDataCard = () => {
     const [row, setRow] = useState({});
     const navigate = useNavigate();
 
-    const [newCardPage,setNewCardPage] = useState(false);
+    const [newCardPage, setNewCardPage] = useState(false);
 
     useEffect(() => {
         const nRow = JSON.parse(localStorage.getItem('excel_data'))[
@@ -67,10 +67,23 @@ const ViewDataCard = () => {
                     Next
                 </button>
             </div>
-            <button onClick={()=>{setNewCardPage(true)}}>Add New Card</button>
+            <button
+                onClick={() => {
+                    setNewCardPage(true);
+                }}
+            >
+                Add New Card
+            </button>
 
-            {newCardPage && <NewCard data={csvData.length > 0 ? csvData[1] : {}} onClose={()=>{setNewCardPage(false)}}  updateCsvData={handleUpdateCsvData}/>}
-
+            {newCardPage && (
+                <NewCard
+                    data={csvData.length > 0 ? csvData[1] : {}}
+                    onClose={() => {
+                        setNewCardPage(false);
+                    }}
+                    updateCsvData={handleUpdateCsvData}
+                />
+            )}
         </>
     );
 };
