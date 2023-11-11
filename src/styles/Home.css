@@ -4,8 +4,9 @@
 .very-light-purple-text {
     color: #caa8f5;
 }
-.shadow{
-    box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.5);}
+.shadow {
+    box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.5);
+}
 
 .home-container {
     background: #ffffff;
