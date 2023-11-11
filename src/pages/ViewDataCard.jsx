@@ -8,13 +8,14 @@ const ViewDataCard = () => {
     const [row, setRow] = useState({});
     const navigate = useNavigate();
 
-
     useEffect(() => {
-        const nRow =  JSON.parse(localStorage.getItem('excel_data'))[params.id-1];
+        const nRow = JSON.parse(localStorage.getItem('excel_data'))[
+            params.id - 1
+        ];
         setRow(nRow);
-    }, [ params.id]);
+    }, [params.id]);
 
-    const maxItems =  JSON.parse(localStorage.getItem('excel_data')).length;
+    const maxItems = JSON.parse(localStorage.getItem('excel_data')).length;
 
     const handleNext = () => {
         const id = Number(params.id);

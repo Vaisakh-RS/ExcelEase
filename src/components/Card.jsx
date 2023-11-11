@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
 const Card = ({ data }) => {
