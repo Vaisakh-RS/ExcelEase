@@ -4,35 +4,29 @@ import { useParams } from 'react-router-dom';
 const Card = ({ data }) => {
     const params = useParams();
     return (
-        <div className="bg-white p-4 rounded-lg shadow-md">
+        <div className="bg-white p-4 rounded-lg shadow-md w-1/2">
             <div>
-                <p className="border-b-2 border-gray-300 mb-4 pb-2">
-                    ---------------------
-                </p>
-
-                <h5 className="text-xl font-semibold mb-2">Card {params.id}</h5>
-                <p className="text-lg font-semibold mb-4">============</p>
-
+                <h5 className="text-2xl font-semibold mb-10">Card {params.id}</h5>
                 {Object.entries(data).map(([key, value]) => (
                     <div key={key} className="mb-4 flex items-center">
-                        <div className="w-1/6">
+                        <div className="w-1/3">
                             <h2 className="text-lg font-semibold mb-1">
                                 {key}
                             </h2>
                         </div>
-                        <div className="w-5/6">
+                        <div className="w-2/3">
                             <input
                                 type="text"
                                 value={value}
                                 onChange={() => {}}
-                                className="w-1/4 p-2 border border-gray-300 rounded"
+                                className="w-1/2 p-2 border border-gray-300 rounded"
                             />
                         </div>
+                        
                     </div>
+                   
                 ))}
-                <p className="border-t-2 border-gray-300 pt-2">
-                    ---------------------
-                </p>
+                 <button>Edit</button>
             </div>
         </div>
     );

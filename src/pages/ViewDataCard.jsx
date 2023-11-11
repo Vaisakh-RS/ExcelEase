@@ -33,11 +33,11 @@ const ViewDataCard = () => {
 
     return (
         <>
-            <div>
+            <div className='flex relative h-full w-full items-center justify-center'>
                 <Card data={row} />
-                <button onClick={handlePrev}>Prev</button>
+                <button onClick={handlePrev} className='absolute top-1/2 left-1'>Prev</button>
                 <br />
-                <button onClick={handleNext}>Next</button>
+                <button onClick={handleNext} className='absolute top-1/2 right-1'>Next</button>
             </div>
         </>
     );
