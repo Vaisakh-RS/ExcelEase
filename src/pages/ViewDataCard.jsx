@@ -22,7 +22,6 @@ const ViewDataCard = () => {
         if (id < maxItems) {
             navigate(`/data/:id`.replace(':id', `${id + 1}`));
         }
-        
     };
 
     const hasNext = Number(params.id) > 1;
@@ -35,7 +34,6 @@ const ViewDataCard = () => {
     };
 
     const hasPrevious = Number(params.id);
-     
 
     return (
         <>
