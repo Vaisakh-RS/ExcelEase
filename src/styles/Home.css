@@ -4,6 +4,8 @@
 .very-light-purple-text {
     color: #caa8f5;
 }
+.shadow{
+    box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.5);}
 
 .home-container {
     background: #ffffff;
@@ -24,7 +26,7 @@
 
 .tex {
     color: #000000;
-    font-size: 2rem;
+    font-size: rem;
     font-weight: 600;
     padding: 1rem 2rem;
     padding-bottom: 7rem;
@@ -35,5 +37,5 @@
 }
 
 .home-container > div {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
