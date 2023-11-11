@@ -1,17 +1,21 @@
+// eslint-disable-next-line react/prop-types
 const Card = ({ data }) => {
     return (
-        <div className="card">
-            <div className="card-body">
-                <h5 className="card-title">Object Details</h5>
-                <ul className="list-group">
-                    {Object.entries(data).map(([key, value]) => (
-                        <li key={key} className="list-group-item">
-                            <h2>{key}</h2>
-                            <br />
-                            <input type="text" value={value} />
-                        </li>
-                    ))}
-                </ul>
+        <div >
+            <div >
+                <p>---------------------</p>
+
+                <h5 >Card </h5>
+                <p>============</p>
+
+                {Object.entries(data).map(([key, value]) => (
+                    <div key={key}>
+                        <br />
+                        <h2>{key}</h2>
+                        <input type="text" value={value} />
+                    </div>
+                ))}
+                <p>---------------------</p>
             </div>
         </div>
     );
