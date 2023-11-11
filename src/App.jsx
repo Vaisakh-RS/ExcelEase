@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import UploadFile from './pages/UploadFile';
-import ViewDataCard from './components/ViewDataCard';
+import ViewDataCard from './pages/ViewDataCard';
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/upload" element={<UploadFile />} />
-                <Route path="/data:id" element={<ViewDataCard />} />
+                <Route path="/data/:id" element={<ViewDataCard />} />
             </Routes>
         </Router>
     );

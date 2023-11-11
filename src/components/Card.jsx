@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const Card = ({ data }) => {
+    const params = useParams();
     return (
         <div className="bg-white p-4 rounded-lg shadow-md">
             <div>
@@ -7,7 +10,7 @@ const Card = ({ data }) => {
                     ---------------------
                 </p>
 
-                <h5 className="text-xl font-semibold mb-2">Card</h5>
+                <h5 className="text-xl font-semibold mb-2">Card {params.id}</h5>
                 <p className="text-lg font-semibold mb-4">============</p>
 
                 {Object.entries(data).map(([key, value]) => (
@@ -21,6 +24,7 @@ const Card = ({ data }) => {
                             <input
                                 type="text"
                                 value={value}
+                                onChange={() => {}}
                                 className="w-1/4 p-2 border border-gray-300 rounded"
                             />
                         </div>

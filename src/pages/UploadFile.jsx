@@ -1,24 +1,18 @@
-import { useState } from 'react';
-import Card from '../components/Card';
+import { useNavigate } from 'react-router-dom';
 import CsvFileUpload from '../components/CsvFileUpload';
 
 const UploadFile = () => {
-    const [csvData, setCsvData] = useState([]);
+    const navigate = useNavigate();
 
     const handleUpload = (objectsList) => {
-        setCsvData(objectsList);
+        localStorage.setItem('excel_data', JSON.stringify(objectsList));
+        navigate('/data/:id'.replace(':id', '1'));
     };
 
     return (
         <div>
             <h1>CSV File Upload and Parsing</h1>
             <CsvFileUpload onUpload={handleUpload} />
-            <h2>Parsed Data:</h2>
-            <div className="cards-container">
-                {csvData.map((object, index) => (
-                    <Card key={index} data={object} />
-                ))}
-            </div>{' '}
         </div>
     );
 };
