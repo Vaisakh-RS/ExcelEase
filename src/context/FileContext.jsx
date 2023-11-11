@@ -3,7 +3,6 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const FileContext = createContext();
 
 export const FileProvider = ({ children }) => {
-
     const [csvData, setCsvData] = useState([]);
 
     useEffect(() => {

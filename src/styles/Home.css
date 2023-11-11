@@ -7,27 +7,26 @@
     height: 100vh;
     width: 100%;
     object-fit: contain;
-  }
-  
-  .logo {
+}
+
+.logo {
     width: 20vw;
     height: 20vh;
     object-fit: contain;
-  }
-  
-  .tex {
+}
+
+.tex {
     color: #000000;
     font-size: 2rem;
     font-weight: 600;
     padding: 1rem 2rem;
     padding-bottom: 7rem;
-  }
-  
-  .home-container>div:hover {
+}
+
+.home-container > div:hover {
     transform: scale(1.12);
-  }
-  
-  .home-container>div {
-  
+}
+
+.home-container > div {
     transition: all 0.5s ease-in-out;
-  }
+}
