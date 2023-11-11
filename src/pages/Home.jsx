@@ -31,7 +31,7 @@ function Home() {
                         <Button
                             className="btns"
                             buttonStyle="btn--primary"
-                            buttonSize="btn--large"
+                            buttonSize="btn--medium"
                         />
                     </div>
                     <div className="mt-8 text-center sm:text-left">
