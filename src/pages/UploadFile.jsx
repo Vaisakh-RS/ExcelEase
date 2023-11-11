@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Card from '../components/Card';
 import CsvFileUpload from '../components/CsvFileUpload';
 
 const UploadFile = () => {
@@ -12,9 +13,12 @@ const UploadFile = () => {
         <div>
             <h1>CSV File Upload and Parsing</h1>
             <CsvFileUpload onUpload={handleUpload} />
-
             <h2>Parsed Data:</h2>
-            <pre>{JSON.stringify(csvData, null, 2)}</pre>
+            <div className="cards-container">
+                {csvData.map((object, index) => (
+                    <Card key={index} data={object} />
+                ))}
+            </div>{' '}
         </div>
     );
 };
