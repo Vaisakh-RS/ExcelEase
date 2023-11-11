@@ -1,5 +1,5 @@
-const ViewDataCard=()=>{
-return(<></>)
-}
+const ViewDataCard = () => {
+    return <></>;
+};
 
-export default ViewDataCard
+export default ViewDataCard;
