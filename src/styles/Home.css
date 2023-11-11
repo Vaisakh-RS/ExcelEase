@@ -1,11 +1,17 @@
 .purple {
-    background-color: #592e83;
+    background: linear-gradient(
+        to bottom,
+        #683997 0%,
+        #733aa5 50%,
+        #5d3188 100%
+    );
 }
+
 .very-light-purple-text {
     color: #caa8f5;
 }
 .shadow {
-    box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 15px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .home-container {
@@ -23,6 +29,7 @@
     width: 20vw;
     height: 20vh;
     object-fit: contain;
+    color: #230c33;
 }
 
 .tex {

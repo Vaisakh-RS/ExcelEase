@@ -24,7 +24,7 @@ function Home() {
                             alt="logo"
                         />
                     </div>
-                    <h2 className="text-center sm:text-left mt-4 sm:mt-0 text-2xl sm:text-2xl lg:mt-3 font-bold">
+                    <h2 className="text-center sm:text-left mt-4 sm:mt-0 lg:text-4xl sm:text-2xl lg:mt-3 font-bold">
                         Excel {text}
                     </h2>
                     <div className="text-center sm:text-left mt-4 sm:mt-0 lg:mt-9 home-btns">
