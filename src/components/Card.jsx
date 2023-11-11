@@ -42,24 +42,26 @@ const Card = ({ data }) => {
                 <h5 className="text-2xl font-semibold mb-10">
                     Card {params.id}
                 </h5>
-                {Object.entries(data).map(([key]) => (
-                    <div key={key} className="mb-4 flex items-center">
-                        <div className="w-1/3">
-                            <h2 className="text-lg font-semibold mb-1">
-                                {key}
-                            </h2>
-                        </div>
-                        <div className="w-2/3">
-                            <input
-                                type="text"
-                                value={formData[key]}
-                                name={key}
-                                onChange={(e) => handleInputChange(key, e)}
-                                className="w-1/2 p-2 border border-gray-300 rounded"
-                            />
-                        </div>
-                    </div>
-                ))}
+                {Object.entries(data).map(([key]) => {
+                    return (
+                        <div key={key} className="mb-4 flex items-center">
+                            <div className="w-1/3">
+                                <h2 className="text-lg font-semibold mb-1">
+                                    {key}
+                                </h2>
+                            </div>
+                            <div className="w-2/3">
+                                <input
+                                    type="text"
+                                    value={formData[key]}
+                                    name={key}
+                                    onChange={(e) => handleInputChange(key, e)}
+                                    className="w-1/2 p-2 border border-gray-300 rounded"
+                                    readOnly={!edit}
+                                />
+                            </div>
+                        </div>)
+                })}
                 <button onClick={edit ? updateData : changeToEdit}>
                     {edit ? 'Update' : 'Edit'}
                 </button>{' '}
