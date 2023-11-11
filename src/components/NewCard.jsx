@@ -1,5 +1,31 @@
+import { useState,useEffect } from "react";
+
 /* eslint-disable react/prop-types */
-const Card = ({ data }) => {
+const NewCard = ({ data , onClose , updateCsvData}) => {
+    const initialFormState = Object.fromEntries(
+        Object.keys(data).map((key) => [key, ''])
+    );
+
+    const [formData, setFormData] = useState(initialFormState);
+
+    const handleInputChange = (key, value) => {
+        setFormData((prevData) => ({ ...prevData, [key]: value }));
+    };
+
+    const handleAddCard = () => {
+        // Append formData to csvData in local storage
+        const storedCsvData = JSON.parse(localStorage.getItem('csvData')) || [];
+        const updatedCsvData = [...storedCsvData, formData];
+        localStorage.setItem('csvData', JSON.stringify(updatedCsvData));
+
+        // Notify the parent component to update its state
+        updateCsvData(updatedCsvData);
+
+        // Close the modal or perform any other actions
+        onClose();
+    };
+
+
     return (
         <div className="bg-white p-4 rounded-lg shadow-md">
             <div>
@@ -20,8 +46,9 @@ const Card = ({ data }) => {
                         <div className="w-5/6">
                             <input
                                 type="text"
-                                value={value}
-                                onChange={() => {}}
+                                value={formData[key]}
+                                onChange={(e) =>
+                                    handleInputChange(key, e.target.value)}
                                 className="w-1/4 p-2 border border-gray-300 rounded"
                             />
                         </div>
@@ -31,8 +58,10 @@ const Card = ({ data }) => {
                     ---------------------
                 </p>
             </div>
+            <button onClick={handleAddCard}>Add Card</button>
+            <button onClick={onClose}>Close</button>
         </div>
     );
 };
 
-export default Card;
+export default NewCard;

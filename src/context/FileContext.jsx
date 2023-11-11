@@ -9,7 +9,6 @@ export const FileProvider = ({ children }) => {
         return storedData ? JSON.parse(storedData) : [];
     });
 
-
     useEffect(() => {
         const handleStorageChange = () => {
             const storedData = localStorage.getItem('csvData');
