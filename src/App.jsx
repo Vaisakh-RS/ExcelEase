@@ -1,7 +1,15 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
-    return <h1 className='bg-red-500 p-10'>Initial Setup</h1>;
+    return (
+        <Router>
+          <Routes>
+            <Route path="/home/" element={<Home />} />
+          </Routes>
+        </Router>
+    )
 }
 
 export default App;
