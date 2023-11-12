@@ -1,53 +1,48 @@
 import '../styles/addNewButton.css';
 import * as XLSX from 'xlsx';
-import { useState } from 'react';import { useCallback } from 'react';
+import { useState } from 'react';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import '../styles/csvFileUpload.css';
 import { useNavigate } from 'react-router-dom';
 
 const DownloadButton = () => {
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
-     const onDrop = useCallback(
-         (acceptedFiles) => {
-             const file = acceptedFiles[0];
+    const onDrop = useCallback((acceptedFiles) => {
+        const file = acceptedFiles[0];
 
-             if (file.type == 'text/csv') {
-                 Papa.parse(file, {
-                     complete: (result) => {
-                         const data = result.data;
-                         onUpload(data);
-                     },
-                     header: true,
-                 });
-             } else if (
-                 file.type ===
-                     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
-                 file.type === 'application/vnd.ms-excel'
-             ) {
-                 const arrayBuffer = file.arrayBuffer();
-                 const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-                 const sheetName = workbook.SheetNames[0];
-                 const sheet = workbook.Sheets[sheetName];
-                 const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                 onUpload(data);
-             } else {
-                 alert(
-                     'Unsupported file type. Please upload a CSV or XLSX file.',
-                 );
-             }
-         },
-         [],
-     );
+        if (file.type == 'text/csv') {
+            Papa.parse(file, {
+                complete: (result) => {
+                    const data = result.data;
+                    onUpload(data);
+                },
+                header: true,
+            });
+        } else if (
+            file.type ===
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+            file.type === 'application/vnd.ms-excel'
+        ) {
+            const arrayBuffer = file.arrayBuffer();
+            const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+            onUpload(data);
+        } else {
+            alert('Unsupported file type. Please upload a CSV or XLSX file.');
+        }
+    }, []);
 
-     const onUpload=(data)=>{
+    const onUpload = (data) => {
         localStorage.setItem('excel_data', JSON.stringify(data));
         navigate('/data/'.replace(':id', '1'));
-     }
+    };
 
-         const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
+    const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     const [csvData, setCsvData] = useState(() => {
         const storedData = localStorage.getItem('excel_data');
