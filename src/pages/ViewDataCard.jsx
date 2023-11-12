@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import NewCard from '../components/NewCard';
-import '../styles/viewdataCard.css'
+import '../styles/viewdataCard.css';
 
 const ViewDataCard = () => {
     const [csvData, setCsvData] = useState(() => {
@@ -25,7 +25,7 @@ const ViewDataCard = () => {
     }, [params.id]);
 
     const maxItems = JSON.parse(localStorage.getItem('excel_data')).length;
-        const id = Number(params.id);
+    const id = Number(params.id);
 
     const handleNext = () => {
         if (id < maxItems) {
