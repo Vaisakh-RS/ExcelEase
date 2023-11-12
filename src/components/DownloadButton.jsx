@@ -1,14 +1,13 @@
 import '../styles/addNewButton.css';
-import * as XLSX from 'xlsx';;
+import * as XLSX from 'xlsx';
 import { useState } from 'react';
 
 const DownloadButton = () => {
-    
     const [csvData, setCsvData] = useState(() => {
         const storedData = localStorage.getItem('excel_data');
         return storedData ? JSON.parse(storedData) : null;
     });
-    
+
     const downloadExcel = () => {
         if (csvData) {
             const ws = XLSX.utils.json_to_sheet(csvData);
