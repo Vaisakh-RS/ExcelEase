@@ -22,9 +22,9 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
     };
 
     return (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-lg shadow-md">
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-14 rounded-lg shadow-md border-2">
             <div>
-                <h5 className="text-2xl font-semibold mb-10">Card</h5>
+                <h5 className="text-2xl font-semibold mb-10">Add Data</h5>
 
                 {Object.entries(data).map(([key, value]) => (
                     <div key={key} className="mb-4 flex items-center">

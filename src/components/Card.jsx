@@ -37,7 +37,7 @@ const Card = ({ data }) => {
     };
 
     return (
-        <div className="bg-white p-4 rounded-lg shadow-md w-1/2">
+        <div className="bg-indigo-300 p-4 rounded-lg shadow-md w-1/2 mt-20">
             <div>
                 <h5 className="text-2xl font-semibold mb-10">
                     Card {params.id}
