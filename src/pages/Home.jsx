@@ -15,8 +15,8 @@ function Home() {
             <div className=" text-white font-bold text-2xl px-8 sticky top-0 py-5 purple shadow">
                 <h1>Excel Ease</h1>
             </div>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="home-container">
+            <div className="container w-full px-4 sm:px-6 lg:px-8 dark-purple">
+                <div className="home-container dark-purple">
                     <div className="text-center sm:text-left">
                         <img
                             src={logo}
@@ -24,7 +24,7 @@ function Home() {
                             alt="logo"
                         />
                     </div>
-                    <h2 className="text-center sm:text-left mt-4 sm:mt-0 lg:text-4xl sm:text-2xl lg:mt-3 font-bold">
+                    <h2 className="text-center sm:text-left mt-4 sm:mt-0 lg:text-4xl sm:text-2xl lg:mt-3 font-bold typewriting">
                         Excel {text}
                     </h2>
                     <div className="text-center sm:text-left mt-4 sm:mt-0 lg:mt-9 home-btns">
@@ -35,7 +35,7 @@ function Home() {
                         />
                     </div>
                     <div className="mt-8 text-center sm:text-left">
-                        <h2 className="text-base sm:text-lg">
+                        <h2 className="text-base sm:text-lg text-white">
                             An easy-to-use excel platform.
                         </h2>
                     </div>
