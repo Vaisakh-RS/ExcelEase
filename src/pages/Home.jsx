@@ -12,10 +12,7 @@ function Home() {
 
     return (
         <>
-            <div className=" text-white font-bold text-2xl px-8 sticky top-0 py-5 purple shadow">
-                <h1>Excel Ease</h1>
-            </div>
-            <div className="container w-full px-4 sm:px-6 lg:px-8 dark-purple">
+            <div className="home-container">
                 <div className="home-container dark-purple">
                     <div className="text-center sm:text-left">
                         <img
@@ -36,7 +33,7 @@ function Home() {
                     </div>
                     <div className="mt-8 text-center sm:text-left">
                         <h2 className="text-base sm:text-lg text-white">
-                            An easy-to-use excel platform.
+                            Excel manipulation made easy.
                         </h2>
                     </div>
                 </div>

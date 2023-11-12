@@ -1,9 +1,12 @@
 import CustomizedTables from '../components/CustomizedTables';
+import '../styles/viewTables.css';
 
 const ViewTable = () => {
     return (
         <>
-            <CustomizedTables />
+            <div className="mainBox">
+                <CustomizedTables />
+            </div>
         </>
     );
 };

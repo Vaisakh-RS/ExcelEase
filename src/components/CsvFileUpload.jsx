@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
+import '../styles/csvFileUpload.css';
 import * as XLSX from 'xlsx';
 
 // eslint-disable-next-line react/prop-types
@@ -40,18 +41,9 @@ const CsvFileUpload = ({ onUpload }) => {
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     return (
-        <div
-            className="bg-red-50 text-xl font-extrabold w-1/2 m-auto"
-            {...getRootProps()}
-            style={{
-                padding: '20px',
-                border: '1px dashed #ccc',
-                textAlign: 'center',
-                cursor: 'pointer',
-            }}
-        >
+        <div className="upload_btn" {...getRootProps()}>
             <input {...getInputProps()} />
-            <p>Drag and drop a file here, or click to select one</p>
+            <p>Upload Files</p>
         </div>
     );
 };

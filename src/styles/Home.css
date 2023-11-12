@@ -47,9 +47,9 @@
     padding-bottom: 7rem;
 }
 
-.home-container > div:hover {
+/* .home-container > div:hover {
     transform: scale(1.06);
-}
+} */
 
 .home-container > div {
     transition: all 0.3s ease-in-out;
