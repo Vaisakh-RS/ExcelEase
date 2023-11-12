@@ -2,7 +2,8 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: rgba(49, 49, 49, 0.843);    color: white;
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
     padding: 8px 20px;
     border-radius: 10px;
 }
@@ -23,7 +24,8 @@
 }
 
 .upload {
-    background: rgba(49, 49, 49, 0.843);    color: white;
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
     padding: 8px 20px;
     border-radius: 10px;
 }
