@@ -1,4 +1,4 @@
-import '../styles/addNewButton.css'
+import '../styles/addNewButton.css';
 
 const AddNewButton = () => {
     return (

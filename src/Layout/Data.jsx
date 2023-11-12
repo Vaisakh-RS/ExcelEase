@@ -7,7 +7,7 @@ const DataLayout = () => {
         <>
             <ViewSwitch />
             <Outlet />
-            <AddNewButton/>
+            <AddNewButton />
         </>
     );
 };
