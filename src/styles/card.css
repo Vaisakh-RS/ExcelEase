@@ -1,0 +1,16 @@
+.cardMainBox {
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
+}
+
+.cardMainBox input {
+    background-color: transparent;
+
+    width: 100%;
+}
+
+.buttonBox {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

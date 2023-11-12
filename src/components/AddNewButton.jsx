@@ -9,7 +9,6 @@ const AddNewButton = ({ onAddNew }) => {
                 }}
                 className="addNewBtn"
             >
-                {' '}
                 Add New
             </button>
         </>

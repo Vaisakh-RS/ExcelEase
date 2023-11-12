@@ -3,6 +3,7 @@ import AddNewButton from '../components/AddNewButton';
 import ViewSwitch from '../components/ViewSwitch';
 import NewCard from '../components/NewCard';
 import { useState } from 'react';
+import DownloadButton from '../components/DownloadButton';
 
 const DataLayout = () => {
     const [csvData, setCsvData] = useState(() => {
@@ -20,6 +21,7 @@ const DataLayout = () => {
         <>
             <ViewSwitch />
             <Outlet />
+            <DownloadButton />
             <AddNewButton
                 onAddNew={() => {
                     setNewCardPage(true);

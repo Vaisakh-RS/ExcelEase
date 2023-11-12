@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import '../styles/card.css';
 
 /* eslint-disable react/prop-types */
 const Card = ({ data }) => {
@@ -37,7 +38,7 @@ const Card = ({ data }) => {
     };
 
     return (
-        <div className="p-4 rounded-lg shadow-md w-1/2 mt-20">
+        <div className="p-4 rounded-lg shadow-md w-1/2 mt-20 cardMainBox">
             <div>
                 <h5 className="text-2xl font-semibold mb-10">
                     Row {params.id}
@@ -63,12 +64,19 @@ const Card = ({ data }) => {
                         </div>
                     );
                 })}
-                <button
-                    onClick={edit ? updateData : changeToEdit}
-                    className="border border-gray-500 hover:border-blue-500 px-4 py-2 rounded transition duration-300 ease-in-out"
-                >
-                    {edit ? 'Update' : 'Edit'}
-                </button>{' '}
+                <div className="buttonBox">
+                    <button
+                        onClick={edit ? updateData : changeToEdit}
+                        className="border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+                    >
+                        {edit ? 'Update' : 'Edit'}
+                    </button>
+                    {edit && (
+                        <button className="border border-gray-500 hover:border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out">
+                            Delete
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -7,3 +7,26 @@
     padding: 8px 20px;
     border-radius: 10px;
 }
+
+.buttonDU {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+        gap: 20px;
+}
+
+.download {
+    background-color: black;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+ 
+}
+
+.upload {
+    background-color: black;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}

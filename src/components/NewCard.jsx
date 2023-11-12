@@ -13,9 +13,10 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
 
     const handleAddCard = () => {
         // Append formData to csvData in local storage
-        const storedCsvData = JSON.parse(localStorage.getItem('csvData')) || [];
+        const storedCsvData =
+            JSON.parse(localStorage.getItem('excel_data')) || [];
         const updatedCsvData = [...storedCsvData, formData];
-        localStorage.setItem('csvData', JSON.stringify(updatedCsvData));
+        localStorage.setItem('excel_data', JSON.stringify(updatedCsvData));
 
         updateCsvData(updatedCsvData);
         onClose();
