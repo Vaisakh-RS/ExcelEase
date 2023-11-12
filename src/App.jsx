@@ -4,18 +4,23 @@ import Home from './pages/Home';
 import ViewDataCard from './pages/ViewDataCard';
 import ViewTable from './pages/ViewTable';
 import DataLayout from './Layout/Data';
+import {Toaster} from 'react-hot-toast';
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route element={<DataLayout />}>
+        
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route element={<DataLayout />}>
                     <Route path="/data" element={<ViewTable />} />
                     <Route path="/data/:id" element={<ViewDataCard />} />
-                </Route>
-            </Routes>
-        </Router>
+                    </Route>
+                </Routes>
+                <Toaster/>
+            </Router>
+        
+       
     );
 }
 
