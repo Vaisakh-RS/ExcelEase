@@ -2,8 +2,7 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: black;
-    color: white;
+    background: rgba(49, 49, 49, 0.843);    color: white;
     padding: 8px 20px;
     border-radius: 10px;
 }
@@ -17,15 +16,14 @@
 }
 
 .download {
-    background-color: black;
+    background: rgba(49, 49, 49, 0.843);
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
 }
 
 .upload {
-    background-color: black;
-    color: white;
+    background: rgba(49, 49, 49, 0.843);    color: white;
     padding: 8px 20px;
     border-radius: 10px;
 }

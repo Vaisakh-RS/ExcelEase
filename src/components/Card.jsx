@@ -76,7 +76,11 @@ const Card = ({ data }) => {
                 <div className="buttonBox">
                     <button
                         onClick={edit ? updateData : changeToEdit}
-                        className="border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+                        className={
+                            edit
+                                ? 'border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out'
+                                : 'border border-gray-500 hover:border-violet-500 px-4 py-2 rounded transition duration-300 ease-in-out'
+                        }
                     >
                         {edit ? 'Update' : 'Edit'}
                     </button>
