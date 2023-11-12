@@ -4,73 +4,85 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Card from './Card'; 
+import Card from './Card';
 import CustomizedTables from './CustomizedTables';
 //import Table from '../components/Table'; // Import your Table component
 
 function CustomTabPanel(props) {
-  const { children, value, index, ...other } = props;
+    const { children, value, index, ...other } = props;
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`custom-tabpanel-${index}`}
-      aria-labelledby={`custom-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`custom-tabpanel-${index}`}
+            aria-labelledby={`custom-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
 }
 
 CustomTabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
 };
 
 function a11yProps(index) {
-  return {
-    id: `custom-tab-${index}`,
-    'aria-controls': `custom-tabpanel-${index}`,
-  };
+    return {
+        id: `custom-tab-${index}`,
+        'aria-controls': `custom-tabpanel-${index}`,
+    };
 }
 
 export default function CustomTabs() {
-  const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <Box sx={{ width: '50%' }}> {/* Adjust the width as needed */}
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '100%' }}>
-          <Tabs value={value} onChange={handleChange} aria-label="custom tabs example">
-            <Tab label="Card" {...a11yProps(0)} />
-            <Tab label="Table" {...a11yProps(1)} />
-          </Tabs>
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            }}
+        >
+            <Box sx={{ width: '50%' }}>
+                {' '}
+                {/* Adjust the width as needed */}
+                <Box
+                    sx={{
+                        borderBottom: 1,
+                        borderColor: 'divider',
+                        width: '100%',
+                    }}
+                >
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="custom tabs example"
+                    >
+                        <Tab label="Card" {...a11yProps(0)} />
+                        <Tab label="Table" {...a11yProps(1)} />
+                    </Tabs>
+                </Box>
+                <CustomTabPanel value={value} index={0}>
+                    {/*<Card />*/}
+                </CustomTabPanel>
+                <CustomTabPanel value={value} index={1}>
+                    {/*<Table />*/}
+                    <CustomizedTables />
+                </CustomTabPanel>
+            </Box>
         </Box>
-        <CustomTabPanel value={value} index={0}>
-          {/*<Card />*/}
-        </CustomTabPanel>
-        <CustomTabPanel value={value} index={1}>
-          {/*<Table />*/}
-          <CustomizedTables />
-        </CustomTabPanel>
-      </Box>
-    </Box>
-  );
+    );
 }

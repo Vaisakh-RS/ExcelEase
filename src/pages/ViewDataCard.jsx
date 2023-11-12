@@ -50,7 +50,7 @@ const ViewDataCard = () => {
 
     return (
         <>
-        <CustomTabs />
+            <CustomTabs />
             <div className="flex relative h-full w-full items-center justify-center">
                 <Card data={row} />
                 <button
