@@ -1,9 +1,11 @@
-import CustomizedTables from "../components/CustomizedTables"
+import CustomizedTables from '../components/CustomizedTables';
 
-const ViewTable =()=>{
-    return<>
-    <CustomizedTables/>
-    </>
-}
+const ViewTable = () => {
+    return (
+        <>
+            <CustomizedTables />
+        </>
+    );
+};
 
 export default ViewTable;
