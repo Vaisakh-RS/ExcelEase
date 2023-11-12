@@ -6,8 +6,13 @@
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
+transition: all .2s ease-in-out;
 }
 
+.addNewBtn:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
+}
 .buttonDU {
     position: fixed;
     top: 20px;
@@ -21,6 +26,12 @@
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
+    transition: all .2s ease-in-out ;
+}
+
+.download:hover{
+    transform: scale(0.99);
+    opacity: 0.9;
 }
 
 .upload {
@@ -28,4 +39,10 @@
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
+transition: all .2s ease-in-out;
+}
+
+.upload:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
 }

@@ -10,5 +10,6 @@ export const Button = () => {
         localStorage.setItem('excel_data', JSON.stringify(objectsList));
         navigate('/data/'.replace(':id', '1'));
     };
+    
     return <CsvFileUpload onUpload={handleUpload} />;
 };
