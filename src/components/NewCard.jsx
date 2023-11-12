@@ -13,9 +13,10 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
 
     const handleAddCard = () => {
         // Append formData to csvData in local storage
-        const storedCsvData = JSON.parse(localStorage.getItem('csvData')) || [];
+        const storedCsvData =
+            JSON.parse(localStorage.getItem('excel_data')) || [];
         const updatedCsvData = [...storedCsvData, formData];
-        localStorage.setItem('csvData', JSON.stringify(updatedCsvData));
+        localStorage.setItem('excel_data', JSON.stringify(updatedCsvData));
 
         updateCsvData(updatedCsvData);
         onClose();
@@ -41,7 +42,7 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
                                 onChange={(e) =>
                                     handleInputChange(key, e.target.value)
                                 }
-                                className="w-1/2 p-2 border border-gray-300 rounded"
+                                className="p-2 border border-gray-300 rounded"
                             />
                         </div>
                     </div>

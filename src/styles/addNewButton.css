@@ -1,0 +1,48 @@
+.addNewBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.addNewBtn:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
+}
+.buttonDU {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.download {
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.download:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
+}
+
+.upload {
+    background: rgba(49, 49, 49, 0.843);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload:hover {
+    transform: scale(0.99);
+    opacity: 0.9;
+}

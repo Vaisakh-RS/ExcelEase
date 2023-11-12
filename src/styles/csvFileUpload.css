@@ -1,0 +1,16 @@
+.upload_btn {
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: #9b169b;
+    color: white;
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.1ms ease-in-out;
+}
+
+.upload_btn:hover {
+    background-color: #be23be;
+    transform: scale(1.02);
+}

@@ -3,12 +3,18 @@
         to bottom,
         #683997 0%,
         #733aa5 50%,
-        #5d3188 100%
+        #592e83 100%
     );
+}
+.dark-purple {
+    background-color: rgb(40, 28, 48) !important;
 }
 
 .very-light-purple-text {
     color: #caa8f5;
+}
+.typewriting {
+    color: #9984d4;
 }
 .shadow {
     box-shadow: 0px 15px 10px 10px rgba(0, 0, 0, 0.5);
@@ -29,7 +35,8 @@
     width: 20vw;
     height: 20vh;
     object-fit: contain;
-    color: #230c33;
+    color: #230c33 !important;
+    filter: invert(65%);
 }
 
 .tex {
@@ -40,9 +47,9 @@
     padding-bottom: 7rem;
 }
 
-.home-container > div:hover {
+/* .home-container > div:hover {
     transform: scale(1.06);
-}
+} */
 
 .home-container > div {
     transition: all 0.3s ease-in-out;
