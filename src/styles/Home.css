@@ -3,18 +3,18 @@
         to bottom,
         #683997 0%,
         #733aa5 50%,
-        #592E83 100%
+        #592e83 100%
     );
 }
 .dark-purple {
-    background-color: rgb(40, 28, 48)!important;
+    background-color: rgb(40, 28, 48) !important;
 }
 
 .very-light-purple-text {
     color: #caa8f5;
 }
-.typewriting{
-    color: #9984D4;
+.typewriting {
+    color: #9984d4;
 }
 .shadow {
     box-shadow: 0px 15px 10px 10px rgba(0, 0, 0, 0.5);
