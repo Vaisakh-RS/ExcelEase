@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import NewCard from '../components/NewCard';
+import CustomTabs from '../components/CustomTabs';
 
 const ViewDataCard = () => {
     const [csvData, setCsvData] = useState(() => {
@@ -49,6 +50,7 @@ const ViewDataCard = () => {
 
     return (
         <>
+        <CustomTabs />
             <div className="flex relative h-full w-full items-center justify-center">
                 <Card data={row} />
                 <button
