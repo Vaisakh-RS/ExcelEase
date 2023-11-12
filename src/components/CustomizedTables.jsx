@@ -31,7 +31,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const storedData = JSON.parse(localStorage.getItem('excel_data')) || [];
 
 export default function CustomizedTables() {
-    // Assuming the data structure is consistent across rows
     const columns = Object.keys(storedData[0]);
 
     return (

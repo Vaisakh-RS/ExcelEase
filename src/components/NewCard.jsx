@@ -42,7 +42,7 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
                                 onChange={(e) =>
                                     handleInputChange(key, e.target.value)
                                 }
-                                className="w-1/2 p-2 border border-gray-300 rounded"
+                                className="p-2 border border-gray-300 rounded"
                             />
                         </div>
                     </div>

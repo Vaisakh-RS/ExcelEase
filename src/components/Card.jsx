@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/card.css';
 
 /* eslint-disable react/prop-types */
@@ -8,6 +8,7 @@ const Card = ({ data }) => {
     const params = useParams();
     const [formData, setFormData] = useState(data);
     const [edit, setEdit] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setEdit(false);
@@ -35,6 +36,14 @@ const Card = ({ data }) => {
         const excelData = JSON.parse(localStorage.getItem('excel_data'));
         excelData.splice(params.id - 1, 1, formData);
         localStorage.setItem('excel_data', JSON.stringify(excelData));
+    };
+
+    const deleteData = () => {
+        setEdit(false);
+        const excelData = JSON.parse(localStorage.getItem('excel_data'));
+        excelData.splice(params.id - 1, 1);
+        localStorage.setItem('excel_data', JSON.stringify(excelData));
+        navigate('/data');
     };
 
     return (
@@ -72,7 +81,10 @@ const Card = ({ data }) => {
                         {edit ? 'Update' : 'Edit'}
                     </button>
                     {edit && (
-                        <button className="border border-gray-500 hover:border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out">
+                        <button
+                            onClick={deleteData}
+                            className="border border-gray-500 hover:border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+                        >
                             Delete
                         </button>
                     )}
