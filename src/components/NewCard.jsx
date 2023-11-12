@@ -21,6 +21,7 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
 
         updateCsvData(updatedCsvData);
         onClose();
+        location.reload();
     };
 
     return (
@@ -51,18 +52,18 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-between">
-                    <button
-                        className="border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out"
-                        onClick={handleAddCard}
-                    >
-                        Add Card
-                    </button>
+                <div className="flex justify-between mt-10">
                     <button
                         className="border border-gray-500 hover:border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out"
                         onClick={onClose}
                     >
                         Close
+                    </button>
+                    <button
+                        className="border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+                        onClick={handleAddCard}
+                    >
+                        Add Card
                     </button>
                 </div>
             </div>
