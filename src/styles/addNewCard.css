@@ -1,0 +1,24 @@
+.newData {
+    background-color: rgb(172, 172, 172);
+    border: none;
+    padding: 20px;
+    margin: 0;
+    width: 40%;
+    z-index: 3;
+}
+
+.newData input {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.395);
+    backdrop-filter: blur(1px);
+}
