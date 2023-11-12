@@ -6,7 +6,7 @@
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
-transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .addNewBtn:hover {
@@ -26,10 +26,10 @@ transition: all .2s ease-in-out;
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
-    transition: all .2s ease-in-out ;
+    transition: all 0.2s ease-in-out;
 }
 
-.download:hover{
+.download:hover {
     transform: scale(0.99);
     opacity: 0.9;
 }
@@ -39,7 +39,7 @@ transition: all .2s ease-in-out;
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
-transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .upload:hover {
