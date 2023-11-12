@@ -1,0 +1,16 @@
+.dataCardBox {
+    margin: 0;
+    padding: 200px 70px;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(206, 200, 207);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.btn_control:disabled,.btn_control:disabled:hover{
+    cursor:not-allowed;
+    opacity: .5;
+    border: 1px solid grey ;
+}
