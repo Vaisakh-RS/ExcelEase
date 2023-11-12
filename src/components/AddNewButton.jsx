@@ -1,12 +1,17 @@
 import '../styles/addNewButton.css';
 
-const AddNewButton = ({onAddNew}) => {
-
+const AddNewButton = ({ onAddNew }) => {
     return (
         <>
-            <button onClick={() => {
+            <button
+                onClick={() => {
                     onAddNew();
-                }} className="addNewBtn"> Add New</button>
+                }}
+                className="addNewBtn"
+            >
+                {' '}
+                Add New
+            </button>
         </>
     );
 };

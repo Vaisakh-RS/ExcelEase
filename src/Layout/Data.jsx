@@ -16,15 +16,25 @@ const DataLayout = () => {
         setCsvData(newCsvData); // Assuming setCsvData is the state updater
     };
 
-
     return (
         <>
             <ViewSwitch />
             <Outlet />
-            <AddNewButton onAddNew={()=>{setNewCardPage(true)
-            console.log(newCardPage)
-            }} />
-            {newCardPage && <NewCard data={csvData.length > 0 ? csvData[1] : {}} onClose={()=>{setNewCardPage(false)}}  updateCsvData={handleUpdateCsvData} />}
+            <AddNewButton
+                onAddNew={() => {
+                    setNewCardPage(true);
+                    console.log(newCardPage);
+                }}
+            />
+            {newCardPage && (
+                <NewCard
+                    data={csvData.length > 0 ? csvData[1] : {}}
+                    onClose={() => {
+                        setNewCardPage(false);
+                    }}
+                    updateCsvData={handleUpdateCsvData}
+                />
+            )}
         </>
     );
 };
