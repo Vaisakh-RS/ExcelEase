@@ -6,6 +6,7 @@ import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import '../styles/csvFileUpload.css';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const DownloadButton = () => {
     const navigate = useNavigate();
@@ -33,13 +34,17 @@ const DownloadButton = () => {
             const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
             onUpload(data);
         } else {
-            alert('Unsupported file type. Please upload a CSV or XLSX file.');
+            toast.error(
+                'Unsupported file type. Please upload a CSV or XLSX file',
+            );
         }
     }, []);
 
     const onUpload = (data) => {
         localStorage.setItem('excel_data', JSON.stringify(data));
+        toast.success('File uploaded Successfully');
         navigate('/data/'.replace(':id', '1'));
+        
     };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });

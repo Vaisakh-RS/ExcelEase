@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import '../styles/csvFileUpload.css';
 import * as XLSX from 'xlsx';
-import toast from'react-hot-toast';
+import toast from 'react-hot-toast';
 
 // eslint-disable-next-line react/prop-types
 const CsvFileUpload = ({ onUpload }) => {
@@ -30,8 +30,11 @@ const CsvFileUpload = ({ onUpload }) => {
                 const sheet = workbook.Sheets[sheetName];
                 const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
                 onUpload(data);
+                toast.success('File uploaded Successfully');
             } else {
-                toast.error("Unsupported file type. Please upload a CSV or XLSX file");
+                toast.error(
+                    'Unsupported file type. Please upload a CSV or XLSX file',
+                );
             }
         },
         [onUpload],
