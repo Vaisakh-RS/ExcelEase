@@ -22,3 +22,21 @@
     background: rgba(0, 0, 0, 0.395);
     backdrop-filter: blur(1px);
 }
+
+.tableValueCard {
+    background-color: rgb(172, 172, 172);
+    border: none;
+    padding: 10px 10px 0;
+    margin: 0;
+    z-index: 3;
+}
+
+.tableValueCard h2{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.btnPop{
+    margin-top: 15px;
+}

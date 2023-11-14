@@ -1,9 +1,10 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import '../styles/csvFileUpload.css';
 import * as XLSX from 'xlsx';
 import toast from 'react-hot-toast';
+import TableFields from './TableFields';
 
 // eslint-disable-next-line react/prop-types
 const CsvFileUpload = ({ onUpload }) => {

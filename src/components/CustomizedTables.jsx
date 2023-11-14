@@ -31,10 +31,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const CustomizedTables = () => {
-    // Retrieve data from local storage or use an empty array as a default
     const storedData = JSON.parse(localStorage.getItem('excel_data')) || [];
 
-    const columns = Object.keys(storedData[0]);
+    const columns = JSON.parse(localStorage.getItem('table_col'));
     const navigate = useNavigate();
 
     const [refresh, setRefresh] = useState(false);
@@ -50,10 +49,6 @@ const CustomizedTables = () => {
         setRefresh(!refresh);
         console.log(`Delete button clicked for row ${rowIndex}`);
     };
-
-    useEffect(() => {
-        // Your effect logic here
-    }, [storedData, refresh]);
 
     return (
         <TableContainer component={Paper}>
@@ -75,8 +70,7 @@ const CustomizedTables = () => {
                     {storedData.map((row, rowIndex) => (
                         <StyledTableRow key={rowIndex}>
                             <StyledTableCell key={rowIndex} align="center">
-                                {' '}
-                                {rowIndex + 1}{' '}
+                                {rowIndex + 1}
                             </StyledTableCell>
                             {columns.map((column, columnIndex) => (
                                 <StyledTableCell

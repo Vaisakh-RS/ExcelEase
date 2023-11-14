@@ -5,11 +5,10 @@ import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import '../styles/csvFileUpload.css';
-import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import TableFields from './TableFields';
 
 const DownloadButton = () => {
-    const navigate = useNavigate();
 
     const onDrop = useCallback((acceptedFiles) => {
         const file = acceptedFiles[0];
@@ -39,16 +38,21 @@ const DownloadButton = () => {
             );
         }
     }, []);
+    const [uploaded, setUploaded] = useState(false);
+    const [columns, setData] = useState([]);
 
     const onUpload = (data) => {
         localStorage.setItem('excel_data', JSON.stringify(data));
         toast.success('File uploaded Successfully');
-        navigate('/data/'.replace(':id', '1'));
+        const table_columns = Object.keys(data[0]);
+        localStorage.setItem('table_col', JSON.stringify(table_columns));
+        setData(table_columns);
+        setUploaded(true);
     };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-    const [csvData, setCsvData] = useState(() => {
+    const [csvData] = useState(() => {
         const storedData = localStorage.getItem('excel_data');
         return storedData ? JSON.parse(storedData) : null;
     });
@@ -72,6 +76,7 @@ const DownloadButton = () => {
                     Download
                 </button>
             </div>
+            {uploaded && <TableFields data={columns} />}
         </>
     );
 };
