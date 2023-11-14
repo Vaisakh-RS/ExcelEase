@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/ViewSwitch.css';
 
@@ -15,6 +15,10 @@ const ViewSwitch = () => {
             navigate('/data/1');
         }
     };
+
+    useEffect(()=>{
+        setTable(param.id ? false : true);
+    },[param.id])
 
     return (
         <>
