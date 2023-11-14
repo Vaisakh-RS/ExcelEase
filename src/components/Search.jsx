@@ -10,10 +10,11 @@ const Search = () => {
         navigate(`/data/${searchValue}`);
     };
     return (
-        <div className="sBox">
+        <div className="sBox pt-3">
             <input
-                placeholder="select by row"
-                className="searchF"
+                
+                placeholder="Select by row number"
+                className="searchF p-2"
                 type="number"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}

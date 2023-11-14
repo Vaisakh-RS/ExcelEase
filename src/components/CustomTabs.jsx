@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Card from './Card';
 import CustomizedTables from './CustomizedTables';
-//import Table from '../components/Table'; // Import your Table component
+
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -58,7 +58,6 @@ export default function CustomTabs() {
         >
             <Box sx={{ width: '50%' }}>
                 {' '}
-                {/* Adjust the width as needed */}
                 <Box
                     sx={{
                         borderBottom: 1,

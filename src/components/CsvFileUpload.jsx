@@ -44,6 +44,7 @@ const CsvFileUpload = ({ onUpload }) => {
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     return (
+        
         <div className="upload_btn" {...getRootProps()}>
             <input {...getInputProps()} />
             <p>Upload Files</p>
