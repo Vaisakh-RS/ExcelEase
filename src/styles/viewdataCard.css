@@ -19,10 +19,10 @@
     border: 1px solid grey;
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
     .btn_control {
-            top: 20%;
-        }
+        top: 20%;
+    }
 }
 
 @media (max-width: 650px) {
