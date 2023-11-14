@@ -53,7 +53,7 @@ const ViewDataCard = () => {
                 <Card data={row} />
                 <button
                     onClick={handlePrev}
-                    className="absolute top-1/2 left-1 ml-32 border border-gray-500 hover:border-violet-500 px-4 py-2 rounded transition duration-300 ease-in-out btn_control"
+                    className="absolute top-1/2 left-1 ml-32 border border-gray-500 hover:border-violet-500 px-4 py-2 rounded transition duration-300 ease-in-out btn_control "
                     disabled={!hasPrevious}
                 >
                     {'<'}

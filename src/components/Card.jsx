@@ -47,14 +47,17 @@ const Card = ({ data }) => {
     };
 
     return (
-        <div className="p-4 rounded-lg shadow-md w-1/2 mt-20 cardMainBox">
+        <div className="p-4 rounded-lg shadow-md w-full md:w-1/2 lg:w-1/3 mt-20 cardMainBox">
             <div>
-                <h5 className="text-2xl font-semibold mb-10 sm:text-xl">
+                <h5 className="text-2xl font-semibold mb-10">
                     Row {params.id}
                 </h5>
                 {Object.entries(data).map(([key]) => {
                     return (
-                        <div key={key} className="mb-4 flex flex-col md:flex-row items-center ">
+                        <div
+                            key={key}
+                            className="mb-4 flex flex-col sm:flex-row items-center"
+                        >
                             <div className="w-full md:w-1/3 mb-2 md:mb-0">
                                 <h2 className="text-lg font-semibold mb-1">
                                     {key}
@@ -71,7 +74,6 @@ const Card = ({ data }) => {
                                 />
                             </div>
                         </div>
-
                     );
                 })}
                 <div className="buttonBox">
