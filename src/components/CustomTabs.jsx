@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import Card from './Card';
 import CustomizedTables from './CustomizedTables';
 
-
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
 

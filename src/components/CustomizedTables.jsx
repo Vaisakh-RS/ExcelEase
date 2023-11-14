@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import { TablePagination } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -37,6 +38,19 @@ const CustomizedTables = () => {
     const navigate = useNavigate();
 
     const [refresh, setRefresh] = useState(false);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
+
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+    };
+
 
     const handleUpdate = (rowIndex) => {
         navigate('/data/:id'.replace(':id', rowIndex + 1));
@@ -51,7 +65,8 @@ const CustomizedTables = () => {
     };
 
     return (
-        <TableContainer component={Paper}>
+        <>
+            <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
@@ -67,38 +82,45 @@ const CustomizedTables = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {storedData.map((row, rowIndex) => (
-                        <StyledTableRow key={rowIndex}>
-                            <StyledTableCell key={rowIndex} align="center">
-                                {rowIndex + 1}
-                            </StyledTableCell>
-                            {columns.map((column, columnIndex) => (
-                                <StyledTableCell
-                                    key={columnIndex}
-                                    align="center"
-                                >
-                                    {row[column]}
+                        {(rowsPerPage > 0
+                            ? storedData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            : storedData
+                        ).map((row, rowIndex) => (
+                            <StyledTableRow key={rowIndex}>
+                                <StyledTableCell key={rowIndex} align="center">
+                                    {page * rowsPerPage + rowIndex + 1}
                                 </StyledTableCell>
-                            ))}
-                            <StyledTableCell align="center">
-                                <Button
-                                    onClick={() => handleUpdate(rowIndex)}
-                                    color="success"
-                                >
-                                    Update
-                                </Button>
-                                <Button
-                                    onClick={() => handleDelete(rowIndex)}
-                                    color="warning"
-                                >
-                                    Delete
-                                </Button>
-                            </StyledTableCell>
-                        </StyledTableRow>
+                                {columns.map((column, columnIndex) => (
+                                    <StyledTableCell key={columnIndex} align="center">
+                                        {row[column]}
+                                    </StyledTableCell>
+                                ))}
+                                <StyledTableCell align="center">
+                                    <Button onClick={() => handleUpdate(page * rowsPerPage + rowIndex)} color="success">
+                                        Update
+                                    </Button>
+                                    <Button onClick={() => handleDelete(page * rowsPerPage + rowIndex)} color="warning">
+                                        Delete
+                                    </Button>
+                                </StyledTableCell>
+                            </StyledTableRow>
                     ))}
                 </TableBody>
             </Table>
-        </TableContainer>
+                </TableContainer>
+                <TablePagination
+                
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={storedData.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+                
+            />
+        </>
+        
     );
 };
 

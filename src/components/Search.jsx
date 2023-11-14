@@ -12,7 +12,6 @@ const Search = () => {
     return (
         <div className="sBox pt-3">
             <input
-                
                 placeholder="Select by row number"
                 className="searchF p-2"
                 type="number"
