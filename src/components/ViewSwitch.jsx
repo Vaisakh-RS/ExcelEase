@@ -16,9 +16,9 @@ const ViewSwitch = () => {
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         setTable(param.id ? false : true);
-    },[param.id])
+    }, [param.id]);
 
     return (
         <>

@@ -44,7 +44,6 @@ const DownloadButton = () => {
         localStorage.setItem('excel_data', JSON.stringify(data));
         toast.success('File uploaded Successfully');
         navigate('/data/'.replace(':id', '1'));
-        
     };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
