@@ -2,11 +2,20 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(123, 123, 123, 0.211);
 }
 
 .searchF {
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(123, 123, 123, 0.211);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1.5px 2px;
+}
+
+.searchF::placeholder {
+    font-size: small;
 }
 
 .btnS {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import '../styles/search.css';
 
@@ -7,13 +8,20 @@ const Search = () => {
     const navigate = useNavigate();
 
     const handleSearch = () => {
-        navigate(`/data/${searchValue}`);
+        if (
+            JSON.parse(localStorage.getItem('excel_data')).length >= searchValue
+        ) {
+            navigate(`/data/${searchValue}`);
+        } else {
+            toast.error(`Row ${searchValue} does not exist.`);
+        }
+        setSearchValue('');
     };
     return (
-        <div className="sBox pt-3">
+        <div className="sBox">
             <input
                 placeholder="Select by row number"
-                className="searchF p-2"
+                className="searchF"
                 type="number"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
