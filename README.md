@@ -16,7 +16,7 @@ Made as part of the [GTA hackathon](https://gta.mulearn.org/sandshores).
 
 ## Workflow
 
-![Workflow]()
+![Workflow](https://github.com/Vaisakh-RS/ExcelEase/blob/main/src/assets/Workflow.png?raw=true)
 
 
 ## Dependencies 
