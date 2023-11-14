@@ -9,7 +9,6 @@ import toast from 'react-hot-toast';
 import TableFields from './TableFields';
 
 const DownloadButton = () => {
-
     const onDrop = useCallback((acceptedFiles) => {
         const file = acceptedFiles[0];
 
