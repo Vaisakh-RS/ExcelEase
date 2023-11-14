@@ -60,6 +60,7 @@ const CustomizedTables = () => {
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
+                        <StyledTableCell align="center">Row</StyledTableCell>
                         {columns.map((column, index) => (
                             <StyledTableCell key={index} align="center">
                                 {column}
@@ -73,6 +74,10 @@ const CustomizedTables = () => {
                 <TableBody>
                     {storedData.map((row, rowIndex) => (
                         <StyledTableRow key={rowIndex}>
+                            <StyledTableCell key={rowIndex} align="center">
+                                {' '}
+                                {rowIndex + 1}{' '}
+                            </StyledTableCell>
                             {columns.map((column, columnIndex) => (
                                 <StyledTableCell
                                     key={columnIndex}
