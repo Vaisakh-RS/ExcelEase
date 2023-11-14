@@ -66,7 +66,7 @@ const NewCard = ({ data, onClose, updateCsvData }) => {
                         className="border border-gray-500 hover:border-green-500 px-4 py-2 rounded transition duration-300 ease-in-out"
                         onClick={handleAddCard}
                     >
-                        Add Card
+                        Add
                     </button>
                 </div>
             </div>

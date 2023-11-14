@@ -10,6 +10,7 @@ Made as part of the [GTA hackathon](https://gta.mulearn.org/sandshores).
 
 - Users can add ,edit and delete data from the file.
 - The file can contain any number of rows and the labels for the card will be dynamically generated.
+- Users can select which columns should be displayed from the file that they uploaded.
 - Local Storage is used to store the files.
 - Any row can be easily searched using the row number.
 - Table Pagination is implemented.

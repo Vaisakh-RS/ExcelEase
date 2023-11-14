@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/card.css';
+import toast from 'react-hot-toast';
 
 /* eslint-disable react/prop-types */
 const Card = ({ data }) => {
@@ -36,6 +37,7 @@ const Card = ({ data }) => {
         const excelData = JSON.parse(localStorage.getItem('excel_data'));
         excelData.splice(params.id - 1, 1, formData);
         localStorage.setItem('excel_data', JSON.stringify(excelData));
+        toast.success("Row Updated");
     };
 
     const deleteData = () => {
@@ -43,6 +45,7 @@ const Card = ({ data }) => {
         const excelData = JSON.parse(localStorage.getItem('excel_data'));
         excelData.splice(params.id - 1, 1);
         localStorage.setItem('excel_data', JSON.stringify(excelData));
+        toast.success("Row deleted");
         navigate('/data');
     };
 

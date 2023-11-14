@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { TablePagination } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -60,6 +61,7 @@ const CustomizedTables = () => {
         localStorage.setItem('excel_data', JSON.stringify(updatedData));
         setRefresh(!refresh);
         console.log(`Delete button clicked for row ${rowIndex}`);
+        toast.success("Row deleted");
     };
 
     return (

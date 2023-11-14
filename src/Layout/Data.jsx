@@ -4,6 +4,7 @@ import ViewSwitch from '../components/ViewSwitch';
 import NewCard from '../components/NewCard';
 import { useState } from 'react';
 import DownloadButton from '../components/DownloadButton';
+import toast from 'react-hot-toast';
 
 const DataLayout = () => {
     const [csvData, setCsvData] = useState(() => {
@@ -33,8 +34,10 @@ const DataLayout = () => {
                     data={csvData.length > 0 ? csvData[1] : {}}
                     onClose={() => {
                         setNewCardPage(false);
+                        toast.success("New row added");
                     }}
                     updateCsvData={handleUpdateCsvData}
+                    
                 />
             )}
         </>
