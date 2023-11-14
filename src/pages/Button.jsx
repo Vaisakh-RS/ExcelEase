@@ -20,7 +20,7 @@ export const Button = () => {
     return (
         <>
             <CsvFileUpload onUpload={handleUpload} />
-            {uploaded && <TableFields data={columns} />}
+            {uploaded && <TableFields data={columns} onDoneButtonClick={()=>{}} />}
         </>
     );
 };
