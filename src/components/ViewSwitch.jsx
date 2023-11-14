@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/ViewSwitch.css';
+import Search from './Search';
 
 const ViewSwitch = () => {
     const param = useParams();
@@ -21,7 +22,7 @@ const ViewSwitch = () => {
     }, [param.id]);
 
     return (
-        <>
+        <div className="mainRightDiv">
             <div className="tabDiv">
                 <div
                     onClick={() => {
@@ -40,7 +41,8 @@ const ViewSwitch = () => {
                     Row Data
                 </div>
             </div>
-        </>
+            <Search />
+        </div>
     );
 };
 
