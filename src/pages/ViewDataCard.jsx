@@ -42,7 +42,7 @@ const ViewDataCard = () => {
     };
 
     const handleUpdateCsvData = (newCsvData) => {
-        setCsvData(newCsvData); // Assuming setCsvData is the state updater
+        setCsvData(newCsvData); 
     };
 
     const hasPrevious = Number(id > 1);

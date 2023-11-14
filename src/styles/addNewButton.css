@@ -19,6 +19,7 @@
     left: 20px;
     display: flex;
     gap: 20px;
+
 }
 
 .download {
@@ -45,4 +46,12 @@
 .upload:hover {
     transform: scale(0.99);
     opacity: 0.9;
+}
+
+@media (max-width: 612px) {
+  .buttonDU{
+    position: static; 
+    left: auto; 
+    justify-content: center;
+  }
 }

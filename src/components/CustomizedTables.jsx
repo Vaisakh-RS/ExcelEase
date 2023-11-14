@@ -41,7 +41,6 @@ const CustomizedTables = () => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
-
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -50,7 +49,6 @@ const CustomizedTables = () => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
-
 
     const handleUpdate = (rowIndex) => {
         navigate('/data/:id'.replace(':id', rowIndex + 1));
@@ -67,23 +65,28 @@ const CustomizedTables = () => {
     return (
         <>
             <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead>
-                    <TableRow>
-                        <StyledTableCell align="center">Row</StyledTableCell>
-                        {columns.map((column, index) => (
-                            <StyledTableCell key={index} align="center">
-                                {column}
+                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell align="center">
+                                Row
                             </StyledTableCell>
-                        ))}
-                        <StyledTableCell align="center">
-                            Actions
-                        </StyledTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
+                            {columns.map((column, index) => (
+                                <StyledTableCell key={index} align="center">
+                                    {column}
+                                </StyledTableCell>
+                            ))}
+                            <StyledTableCell align="center">
+                                Actions
+                            </StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
                         {(rowsPerPage > 0
-                            ? storedData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            ? storedData.slice(
+                                  page * rowsPerPage,
+                                  page * rowsPerPage + rowsPerPage,
+                              )
                             : storedData
                         ).map((row, rowIndex) => (
                             <StyledTableRow key={rowIndex}>
@@ -91,25 +94,41 @@ const CustomizedTables = () => {
                                     {page * rowsPerPage + rowIndex + 1}
                                 </StyledTableCell>
                                 {columns.map((column, columnIndex) => (
-                                    <StyledTableCell key={columnIndex} align="center">
+                                    <StyledTableCell
+                                        key={columnIndex}
+                                        align="center"
+                                    >
                                         {row[column]}
                                     </StyledTableCell>
                                 ))}
                                 <StyledTableCell align="center">
-                                    <Button onClick={() => handleUpdate(page * rowsPerPage + rowIndex)} color="success">
+                                    <Button
+                                        onClick={() =>
+                                            handleUpdate(
+                                                page * rowsPerPage + rowIndex,
+                                            )
+                                        }
+                                        color="success"
+                                    >
                                         Update
                                     </Button>
-                                    <Button onClick={() => handleDelete(page * rowsPerPage + rowIndex)} color="warning">
+                                    <Button
+                                        onClick={() =>
+                                            handleDelete(
+                                                page * rowsPerPage + rowIndex,
+                                            )
+                                        }
+                                        color="warning"
+                                    >
                                         Delete
                                     </Button>
                                 </StyledTableCell>
                             </StyledTableRow>
-                    ))}
-                </TableBody>
-            </Table>
-                </TableContainer>
-                <TablePagination
-                
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+            <TablePagination
                 rowsPerPageOptions={[5, 10, 25]}
                 component="div"
                 count={storedData.length}
@@ -117,10 +136,8 @@ const CustomizedTables = () => {
                 page={page}
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
-                
             />
         </>
-        
     );
 };
 

@@ -1,6 +1,6 @@
 .mainRightDiv {
     position: fixed;
-    top: 10px;
+    top: 15px;
     right: 20px;
     display: flex;
     flex-direction: column;
@@ -34,4 +34,12 @@
     backdrop-filter: blur(4px);
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 612px) {
+    .mainRightDiv {
+        position: static;
+        margin-top: 80px;
+        margin: 80px 20px 0px 20px;
+    }
 }
