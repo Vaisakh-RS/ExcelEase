@@ -49,28 +49,29 @@ const Card = ({ data }) => {
     return (
         <div className="p-4 rounded-lg shadow-md w-1/2 mt-20 cardMainBox">
             <div>
-                <h5 className="text-2xl font-semibold mb-10">
+                <h5 className="text-2xl font-semibold mb-10 sm:text-xl">
                     Row {params.id}
                 </h5>
                 {Object.entries(data).map(([key]) => {
                     return (
-                        <div key={key} className="mb-4 flex items-center">
-                            <div className="w-1/3">
+                        <div key={key} className="mb-4 flex flex-col md:flex-row items-center ">
+                            <div className="w-full md:w-1/3 mb-2 md:mb-0">
                                 <h2 className="text-lg font-semibold mb-1">
                                     {key}
                                 </h2>
                             </div>
-                            <div className="w-2/3">
+                            <div className="w-full md:w-2/3">
                                 <input
                                     type="text"
                                     value={formData[key]}
                                     name={key}
                                     onChange={(e) => handleInputChange(key, e)}
-                                    className="w-1/2 p-2 border border-gray-300 rounded"
+                                    className="w-full p-2 border border-gray-300 rounded"
                                     readOnly={!edit}
                                 />
                             </div>
                         </div>
+
                     );
                 })}
                 <div className="buttonBox">

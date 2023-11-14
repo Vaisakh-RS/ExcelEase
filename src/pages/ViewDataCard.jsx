@@ -42,7 +42,7 @@ const ViewDataCard = () => {
     };
 
     const handleUpdateCsvData = (newCsvData) => {
-        setCsvData(newCsvData); 
+        setCsvData(newCsvData);
     };
 
     const hasPrevious = Number(id > 1);

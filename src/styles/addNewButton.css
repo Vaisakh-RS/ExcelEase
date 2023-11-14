@@ -19,7 +19,6 @@
     left: 20px;
     display: flex;
     gap: 20px;
-
 }
 
 .download {
@@ -49,9 +48,9 @@
 }
 
 @media (max-width: 612px) {
-  .buttonDU{
-    position: static; 
-    left: auto; 
-    justify-content: center;
-  }
+    .buttonDU {
+        position: static;
+        left: auto;
+        justify-content: center;
+    }
 }
