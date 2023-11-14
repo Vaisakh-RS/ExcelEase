@@ -1,4 +1,11 @@
 .mainBox {
-    padding: 150px 70px 40px;
+    padding: 150px 3% 40px;
     width: 100vw;
+}
+
+@media (max-width: 612px) {
+    .mainBox {
+        padding: 20px 3% 40px;
+        width: 100vw;
+    }
 }

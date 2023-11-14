@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/addNewCard.css';
 import { useNavigate } from 'react-router-dom';
 
-const TableFields = ({ data }) => {
+const TableFields = ({ data, onDoneButtonClick }) => {
     const [colData, setColData] = useState(() => {
         return data.map((item) => ({ label: item, checked: true }));
     });
@@ -22,6 +22,7 @@ const TableFields = ({ data }) => {
             .filter((item) => item.checked)
             .map((item) => item.label);
         localStorage.setItem('table_col', JSON.stringify(checkedItems));
+        onDoneButtonClick();
         navigate('/data/'.replace(':id', '1'));
     };
 

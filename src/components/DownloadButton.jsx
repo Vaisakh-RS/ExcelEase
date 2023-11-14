@@ -65,6 +65,10 @@ const DownloadButton = () => {
         }
     };
 
+    const handleDoneButtonClick = () => {
+        setUploaded(false);
+    };
+
     return (
         <>
             <div className="buttonDU">
@@ -75,7 +79,12 @@ const DownloadButton = () => {
                     Download
                 </button>
             </div>
-            {uploaded && <TableFields data={columns} />}
+            {uploaded && (
+                <TableFields
+                    data={columns}
+                    onDoneButtonClick={handleDoneButtonClick}
+                />
+            )}
         </>
     );
 };

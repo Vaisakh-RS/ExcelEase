@@ -9,7 +9,7 @@ const AddNewButton = ({ onAddNew }) => {
                 }}
                 className="addNewBtn"
             >
-                Add New
+                Add New Row
             </button>
         </>
     );

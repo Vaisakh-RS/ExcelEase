@@ -1,7 +1,6 @@
 .dataCardBox {
-    margin: 0;
-    padding: 200px 70px;
     height: 100vh;
+    padding: 2% 8%;
     width: 100vw;
     background: rgb(206, 200, 207);
     display: flex;
@@ -9,9 +8,29 @@
     align-items: center;
 }
 
+.btn_control {
+    top: 50%;
+}
+
 .btn_control:disabled,
 .btn_control:disabled:hover {
     cursor: not-allowed;
     opacity: 0.5;
     border: 1px solid grey;
+}
+
+@media (max-width:800px) {
+    .btn_control {
+            top: 20%;
+        }
+}
+
+@media (max-width: 650px) {
+    .dataCardBox {
+        margin: 0;
+    }
+
+    .btn_control {
+        top: 25%;
+    }
 }
